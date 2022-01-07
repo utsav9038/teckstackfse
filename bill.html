@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="bill.css">
+<body>
+    <h1>Bill Calculator</h1>
+    <form onsubmit="calculateprice()">
+        <table>
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <label for="Product">Product Name</label>
+                    </th>
+                    <th>
+                        <input type="text" name="product" id="productName" placeholder="Product Name" required>
+                    </th>
+                </tr>
+                <tr>
+                    <th><label for="price">Product Price in Rs.</label></th>
+                    <th><input type="number" name="price" id="price" placeholder="Product Price" required></th>
+                </tr>
+                <tr>
+                    <th><label for="quantity">Quantity</label></th>
+                    <th><input type="number" name="quantity" id="qty" placeholder="Enter quantity" min="1" required></th>
+                </tr>
+                <tr>
+                    <th><label for="totalprice">Total Price in Rs.</label></th>
+                    <th><output id="totalprice" name="totalprice" for="price qty" required></output></th>
+                </tr>
+                <tr>
+                    <th colspan="2"><input type="submit" id="submit"></th>
+                </tr>
+            </tbody>
+        </table>
+    </form>   
+</body>
+<script>
+    function calculateprice(){
+        var price=document.getElementById('price').value;
+        var cost=document.getElementById('qty').value;
+        document.getElementById('totalprice').innerHTML=price*cost;
+        return false;
+    }
+</script>
+</html>
+
+
+
+
+
+           
